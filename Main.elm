@@ -105,7 +105,7 @@ update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
     case msg of
         ChangeTopic newTopic ->
-            ( { model | topic = newTopic }, getRandomGif newTopic )
+            ( { model | gifUrl = "loading.gif", topic = newTopic }, getRandomGif newTopic )
 
         MorePlease ->
             ( { model | gifUrl = "loading.gif" }, getRandomGif model.topic )
