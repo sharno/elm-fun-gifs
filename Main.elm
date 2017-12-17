@@ -15,6 +15,7 @@ import Style.Color as Color
 import Style.Font as Font
 import Style.Shadow as Shadow
 import Style.Transition as Transition
+import Debug exposing (log)
 
 
 type Styles
@@ -113,8 +114,12 @@ update msg model =
         NewGif (Ok newUrl) ->
             ( { model | gifUrl = newUrl }, Cmd.none )
 
-        NewGif (Err _) ->
-            ( model, Cmd.none )
+        NewGif (Err err) ->
+            let
+                _ =
+                    log "error:" err
+            in
+                ( model, Cmd.none )
 
 
 
