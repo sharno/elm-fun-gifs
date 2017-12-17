@@ -141,7 +141,7 @@ view model =
                         [ -- Input.errorBelow (el Error [] (text "This is an Error!")),
                           Input.focusOnLoad
                         ]
-                    }q
+                    }
                 ]
             , image None
                 [ height (px 500)
